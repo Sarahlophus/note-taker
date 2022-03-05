@@ -33,7 +33,7 @@ fb.post("/notes", (req, res) => {
   }
 });
 
-// // delete notes with DELETE route
+// delete notes with DELETE route
 fb.delete("/:id", (req, res) => {
   const noteId = req.params.id;
   readFromFile("./db/db.json")
@@ -46,7 +46,7 @@ fb.delete("/:id", (req, res) => {
       writeToFile("./db/db.json", result);
 
       // // Respond to the DELETE request
-      // res.json(`Item ${tipId} has been deleted 🗑️`);
+      res.json(`Item ${id} has been deleted 🗑️`);
     });
 });
 

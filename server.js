@@ -20,4 +20,7 @@ app.get("/", (req, res) => res.sendFile(path.join(__dirname, "/public/index.html
 // GET Route for notes page
 app.get("/notes", (req, res) => res.sendFile(path.join(__dirname, "/public/notes.html")));
 
+// Wildcard route to direct users to index page
+app.get("*", (req, res) => res.sendFile(path.join(__dirname, "/public/index.html")));
+
 app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT} 🚀`));
