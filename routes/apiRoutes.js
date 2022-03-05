@@ -1,7 +1,7 @@
 //  requirements
 const fb = require("express").Router();
 const { v4: uuidv4 } = require("uuid");
-const { readAndAppend, readFromFile } = require("../helpers/fsUtils");
+const { readAndAppend, readFromFile, writeToFile } = require("../helpers/fsUtils");
 
 // show created notes on the side with GET route -- will return array of objects
 fb.get("/notes", (req, res) => readFromFile("./db/db.json").then((data) => res.json(JSON.parse(data))));
@@ -34,19 +34,20 @@ fb.post("/notes", (req, res) => {
 });
 
 // delete notes with DELETE route
-fb.delete("/:id", (req, res) => {
+fb.delete("/notes/:id", (req, res) => {
   const noteId = req.params.id;
+  console.log(noteId);
   readFromFile("./db/db.json")
     .then((data) => JSON.parse(data))
     .then((json) => {
       // Make a new array of all notes except the one with the ID provided in the URL
-      const result = json.filter((note) => note.id !== noteId);
+      const result = json.filter((notes) => notes.id !== noteId);
 
       // Save that array to the filesystem
       writeToFile("./db/db.json", result);
 
       // // Respond to the DELETE request
-      res.json(`Item ${id} has been deleted 🗑️`);
+      res.json(`Item ${noteId} has been deleted 🗑️`);
     });
 });
 
