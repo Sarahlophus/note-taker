@@ -21,7 +21,7 @@ Using provided front-end assets, this program allows a user to write, save, and 
 
 ## Usage Instructions
 
-To begin, start the server in an inegrated terminal by entering command <code>nodemon server</code> or <code>node server.js</code>. Open http://localhost:3001/index in your browser to access the Note Taker program!
+To begin, start the server in an inegrated terminal by entering command <code>nodemon server</code> or <code>node server.js</code>. Open http://localhost:3001/index in your browser to access the Note Taker program! You can also simply click the link at the bottom of this page to access the deployed page.
 
 ![a gif of a coding program with green theme displaying server routes and js file, then a green and white website with left side panel and main section](img/Note-Taker.gif)
 
