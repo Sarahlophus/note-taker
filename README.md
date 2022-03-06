@@ -28,4 +28,4 @@ To begin, start the server in an inegrated terminal by entering command <code>no
 ## Links
 
 - Repository: https://github.com/Sarahlophus/note-taker
-- Live page (Heroku):
+- Live page (Heroku): https://happy-notes.herokuapp.com/
